@@ -1,5 +1,5 @@
 {
-  "name": "a-star-algorithm-playground",
+  "name": "astarpathfinding",
   "emitLegacyScripts": false,
   "tree": {
     "$className": "DataModel",

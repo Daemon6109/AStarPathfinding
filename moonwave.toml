@@ -1,0 +1,32 @@
+title = "Anime-Rumble"  # From Git
+gitRepoUrl = "https://github.com/Daemon6109/astarpathfinding" # From Git
+
+gitSourceBranch = "main"
+changelog = true
+classOrder = []
+
+[docusaurus]
+onBrokenLinks = "throw"
+onBrokenMarkdownLinks = "warn"
+
+# From git:
+organizationName = "79rq"
+projectName = "Anime-Rumble"
+url = "https://79rq.github.io/"
+baseUrl = "/Anime-Rumble"
+tagline = "LETS GET READY TO RUMBLE!!!"
+
+[footer]
+style = "dark"
+copyright = "Copyright © 2025 Anime-Rumble. Built with Moonwave and Docusaurus"
+
+[[footer.links]]
+title = "Anime-Rumble"
+
+[[footer.links.items]]
+label = "View on Roblox"
+href = "https://www.roblox.com/games/16752304732/Anime-Rumble"
+
+[home]
+enabled = true
+includeReadme = true # Optional
