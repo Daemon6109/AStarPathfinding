@@ -1,0 +1,15 @@
+/*.rbxlx.lock
+/*.rbxlx
+/*.rbxl.lock
+/*.rbxl
+
+dist/
+
+pesde.lock
+.pesde
+
+luau_packages/
+lune_packages/
+roblox_packages/
+
+sourcemap.json
