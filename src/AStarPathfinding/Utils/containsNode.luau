@@ -6,7 +6,7 @@ type Node = Types.Node
 --[=[
     Check if a list of nodes contains a specific node.
 
-    @within AstarPathfinding
+    @within AStarPathfinding
     @param list NeighboringNodes -- The list of nodes to check.
     @param node Node -- The node to check for.
     @return boolean -- Whether the list contains the node.

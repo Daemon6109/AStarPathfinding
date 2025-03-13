@@ -5,7 +5,7 @@ type Node = Types.Node
 --[=[
     Get the heuristic (estimated cost) from a node to the end node. This is the Manhattan distance.
 
-    @within AstarPathfinding
+    @within AStarPathfinding
     @param node Node -- The node to calculate the heuristic for.
     @param endNode Node -- The end node to calculate the heuristic to.
     @return number -- The heuristic value.
