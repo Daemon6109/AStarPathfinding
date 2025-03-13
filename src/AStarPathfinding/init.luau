@@ -14,7 +14,9 @@ export type AStar = Types.AStar
 export type NeighboringNodes = Types.NeighboringNodes
 export type Node = Types.Node
 
---@class AStarPathfinding
+--[=[
+	@class AStarPathfinding
+]=]
 return {
 	version = version,
 
