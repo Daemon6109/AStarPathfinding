@@ -1,5 +1,7 @@
-name = "daemon/astaralgorithimplayground"
+name = "daemon/astarpathfinding"
 version = "0.1.0"
+authors = ["Daemon6109"]
+repository = "https://github.com/Daemon6109/AStarPathfinding"
 license = "MIT"
 
 [target]
