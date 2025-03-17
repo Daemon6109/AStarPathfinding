@@ -1,10 +1,16 @@
 name = "daemon/astarpathfinding"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Daemon6109"]
 description = "A* search algorithm in luau"
 repository = "https://github.com/Daemon6109/AStarPathfinding"
 license = "MIT"
-includes = ["pesde.toml", "README.md", "LICENSE", "src/AStarPathfinding"]
+includes = [
+    "src/AStarPathfinding/**/*.luau",
+    "pesde.toml",
+    "README.md",
+    "LICENSE",
+    ".luaurc",
+]
 
 [target]
 environment = "roblox"
@@ -23,7 +29,5 @@ sourcemap_generator = ".pesde/scripts/sourcemap_generator.luau"
 [dev_dependencies]
 scripts = { name = "pesde/scripts_rojo", version = "^0.1.0", target = "lune" }
 rojo = { name = "pesde/rojo", version = "^7.4.4", target = "lune" }
-
-[dependencies]
 Jest = { wally = "jsdotlua/jest", version = "^3.10.0" }
 JestGlobals = { wally = "jsdotlua/jest-globals", version = "^3.10.0" }
