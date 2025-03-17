@@ -1,13 +1,15 @@
 name = "daemon/astarpathfinding"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Daemon6109"]
+description = "A* search algorithm in luau"
 repository = "https://github.com/Daemon6109/AStarPathfinding"
 license = "MIT"
+includes = ["pesde.toml", "README.md", "LICENSE", "src/AStarPathfinding"]
 
 [target]
 environment = "roblox"
-lib = "src/init.luau"
-build_files = ["src"]
+lib = "src/AStarPathfinding/init.luau"
+build_files = ["src/AStarPathfinding"]
 
 [indices]
 default = "https://github.com/pesde-pkg/index"

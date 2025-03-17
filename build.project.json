@@ -2,6 +2,6 @@
   "name": "astarpathfinding",
   "emitLegacyScripts": false,
   "tree": {
-    "$path": "dist/src"
+    "$path": "dist/src/AStarPathfinding"
   }
 }
