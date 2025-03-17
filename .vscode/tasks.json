@@ -4,7 +4,7 @@
         {
             "label": "Build",
             "type": "shell",
-            "command": "./scripts/build.sh",
+            "command": "bash ./scripts/build.sh",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -14,7 +14,7 @@
         {
             "label": "Dev",
             "type": "shell",
-            "command": "./scripts/dev.sh",
+            "command": "bash ./scripts/dev.sh",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -24,7 +24,7 @@
         {
             "label": "Install Packages",
             "type": "shell",
-            "command": "./scripts/install-packages.sh",
+            "command": "bash ./scripts/install-packages.sh",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -34,7 +34,7 @@
         {
             "label": "Run Tests",
             "type": "shell",
-            "command": "./scripts/test.sh",
+            "command": "bash ./scripts/test.sh",
             "problemMatcher": [],
             "group": {
                 "kind": "test",

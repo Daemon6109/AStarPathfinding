@@ -1,14 +1,13 @@
-#!/bin/zsh
-source ~/.zshrc
+#!/bin/bash
 
 set -e
 
-# If Packages aren't installed, install them.
+# Install packages if needed
 if [ ! -d "roblox_packages" ]; then
-    sh scripts/install-packages.sh
+    bash scripts/install-packages.sh
 fi
 
+# Run rojo and darklua commands
 rojo sourcemap default.project.json -o sourcemap.json
-
 darklua process --config .darklua.json src/ dist/src
 rojo build build.project.json -o project.rbxl
