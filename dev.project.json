@@ -1,0 +1,20 @@
+{
+  "name": "astarpathfinding",
+  "emitLegacyScripts": false,
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Packages": {
+        "$path": "roblox_packages",
+        "Project": {
+          "$path": "dist/src"
+        }
+      }
+    },
+    "ServerScriptService": {
+      "run-tests": {
+        "$path": "dist/run-tests.server.luau"
+      }
+    }
+  }
+}

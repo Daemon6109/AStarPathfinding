@@ -2,6 +2,10 @@
 /*.rbxlx
 /*.rbxl.lock
 /*.rbxl
+/*.rbxm.lock
+/*.rbxm
+
+build/
 
 dist/
 

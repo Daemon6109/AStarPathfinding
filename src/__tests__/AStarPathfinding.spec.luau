@@ -4,8 +4,8 @@
 -- @Daemon6109 (Matthew Radulovich)
 --------------------------------------------------------------------------------
 
-local AStarPathfinding = require("@Project/AStarPathfinding")
-local JestGlobals = require("@DevPackages/JestGlobals")
+local AStarPathfinding = require("@project")
+local JestGlobals = require("@packages/JestGlobals")
 
 local describe = JestGlobals.describe
 local expect = JestGlobals.expect

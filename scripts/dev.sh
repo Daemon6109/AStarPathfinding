@@ -8,7 +8,7 @@ if [ ! -d "roblox_packages" ]; then
 fi
 
 # Run commands in background with wait to keep script alive
-rojo serve build.project.json &
+rojo serve dev.project.json &
 PID1=$!
 rojo sourcemap default.project.json -o sourcemap.json --watch &
 PID2=$!

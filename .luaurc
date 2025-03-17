@@ -6,9 +6,8 @@
 	},
 	"lintErrors": true,
 	"aliases": {
-		"DevPackages": "roblox_packages",
+		"packages": "roblox_packages",
 		"lune": "~/.lune/.typedefs/0.8.9/",
-		"Project": "src",
-		"Server": "src/server"
+		"project": "src"
 	}
 }

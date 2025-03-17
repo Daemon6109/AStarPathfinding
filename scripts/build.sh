@@ -10,4 +10,4 @@ fi
 # Run rojo and darklua commands
 rojo sourcemap default.project.json -o sourcemap.json
 darklua process --config .darklua.json src/ dist/src
-rojo build build.project.json -o project.rbxl
+rojo build build.project.json -o project.rbxm

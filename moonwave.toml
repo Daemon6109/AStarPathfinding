@@ -1,15 +1,11 @@
-title = "AStarPathfinding"  # From Git
-gitRepoUrl = "https://github.com/Daemon6109/astarpathfinding" # From Git
-
+title = "AStarPathfinding"
+gitRepoUrl = "https://github.com/Daemon6109/astarpathfinding"
 gitSourceBranch = "main"
 changelog = true
-classOrder = []
 
 [docusaurus]
 onBrokenLinks = "throw"
 onBrokenMarkdownLinks = "warn"
-
-# From git:
 organizationName = "Daemon6109"
 projectName = "AStarPathfinding"
 url = "https://Daemon6109.github.io/"
@@ -22,5 +18,4 @@ style = "dark"
 title = "AStarPathfinding"
 
 [home]
-enabled = true
-includeReadme = true # Optional
+includeReadme = true

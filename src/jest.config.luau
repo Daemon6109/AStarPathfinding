@@ -4,6 +4,5 @@ return {
 	},
 	testPathIgnorePatterns = {
 		"Packages",
-		"DevPackages",
 	},
 }
