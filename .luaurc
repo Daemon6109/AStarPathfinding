@@ -6,8 +6,8 @@
 	},
 	"lintErrors": true,
 	"aliases": {
-		"packages": "roblox_packages",
-		"lune": "~/.lune/.typedefs/0.8.9/",
-		"project": "src"
+		"Packages": "roblox_packages",
+		"Project": "src",
+		"lune": "~/.lune/.typedefs/0.8.9/"
 	}
 }

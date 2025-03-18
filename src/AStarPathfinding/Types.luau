@@ -9,18 +9,18 @@ export type Grid = {
 	width: number,
 	height: number,
 	grid: Node,
-	getNeighbors: (self: Grid, node: Node) -> NeighboringNodes,
+	getNeighbors: (self: Grid, node: Node) -> Path,
 	getNode: (self: Grid, x: number, y: number) -> Node | nil,
 	display: (self: Grid) -> nil,
 }
 
 --[=[
-    NeighboringNodes represents a table of neighboring nodes around a given node.
+	Path represents a table of neighboring nodes around a given node.
 
-    @within Grid
-    @type NeighboringNodes {Node}
+	@within Grid
+	@type Path {Node}
 ]=]
-export type NeighboringNodes = { Node }
+export type Path = { Node }
 
 export type Node = {
 	x: number,

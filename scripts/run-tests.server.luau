@@ -1,6 +1,6 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local runCLI = require("@packages/Jest").runCLI
+local runCLI = require("@Packages/Jest").runCLI
 
 local processServiceExists, ProcessService = pcall(function()
 	return game:GetService("ProcessService")

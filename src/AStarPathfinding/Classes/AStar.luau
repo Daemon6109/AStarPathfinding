@@ -2,8 +2,8 @@ local Types = require("../Types")
 
 type AStar = Types.AStar
 type Grid = Types.Grid
-type NeighboringNodes = Types.NeighboringNodes
 type Node = Types.Node
+type Path = Types.Path
 
 local containsNode = require("../Utils/containsNode")
 local getHeuristic = require("../Utils/getHeuristic")
@@ -62,19 +62,13 @@ end
     @param startY number -- The y-coordinate of the start node.
     @param endX number -- The x-coordinate of the end node.
     @param endY number -- The y-coordinate of the end node.
-    @return NeighboringNodes | nil -- A table of nodes representing the path, or nil if no path was found.
+    @return Path | nil -- A table of nodes representing the path, or nil if no path was found.
 
     ```lua
     local path = astar:findPath(1, 1, 10, 10)
     ```
 ]=]
-function AStar.findPath(
-	self: AStarInternal,
-	startX: number,
-	startY: number,
-	endX: number,
-	endY: number
-): NeighboringNodes | nil
+function AStar.findPath(self: AStarInternal, startX: number, startY: number, endX: number, endY: number): Path | nil
 	local startNode = self.grid:getNode(startX, startY)
 	local endNode = self.grid:getNode(endX, endY)
 

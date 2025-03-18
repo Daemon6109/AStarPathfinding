@@ -4,8 +4,8 @@
 -- @Daemon6109 (Matthew Radulovich)
 --------------------------------------------------------------------------------
 
-local AStarPathfinding = require("@project/AStarPathfinding")
-local JestGlobals = require("@packages/JestGlobals")
+local AStarPathfinding = require("@Project/AStarPathfinding")
+local JestGlobals = require("@Packages/JestGlobals")
 
 local describe = JestGlobals.describe
 local expect = JestGlobals.expect
@@ -183,7 +183,10 @@ describe("AStar", function()
 		-- Make all nodes walkable initially
 		for y = 1, 5 do
 			for x = 1, 5 do
-				grid.grid[y][x].walkable = true
+				local node = grid:getNode(x, y)
+				if node then
+					node.walkable = true
+				end
 			end
 		end
 		-- Create a vertical wall at x=3 splitting the grid

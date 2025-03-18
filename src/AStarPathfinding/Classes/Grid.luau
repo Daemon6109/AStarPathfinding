@@ -2,12 +2,12 @@ local Node = require("./Node")
 local Types = require("../Types")
 
 type Grid = Types.Grid
-type NeighboringNodes = Types.NeighboringNodes
 type Node = Types.Node
+type Path = Types.Path
 
 --[=[
-    A Grid represents a 2D grid of nodes. It contains information about the grid size and the nodes themselves.
-    @class Grid
+	A Grid represents a 2D grid of nodes. It contains information about the grid size and the nodes themselves.
+	@class Grid
 ]=]
 local Grid = {}
 Grid.__index = Grid
@@ -16,16 +16,17 @@ type GridInternal = {
 	width: number,
 	height: number,
 	grid: Node,
+	getNode: (self: GridInternal, x: number, y: number) -> Node | nil,
 }
 
 --[=[
-    Props for creating a new Grid.
+	Props for creating a new Grid.
 
-    @within Grid
-    @interface GridProps
-    .width number -- The width of the grid.
-    .height number -- The height of the grid.
-    .blockProbability number -- The probability of a node being non-walkable (0-1).
+	@within Grid
+	@interface GridProps
+	.width number -- The width of the grid.
+	.height number -- The height of the grid.
+	.blockProbability number -- The probability of a node being non-walkable (0-1).
 ]=]
 type GridProps = {
 	width: number,
@@ -34,19 +35,19 @@ type GridProps = {
 }
 
 --[=[
-    Create a new Grid with the given properties.
+	Create a new Grid with the given properties.
 
-    @within Grid
-    @param props GridProps -- The properties for the new Grid.
-    @return Grid -- The new Grid instance.
+	@within Grid
+	@param props GridProps -- The properties for the new Grid.
+	@return Grid -- The new Grid instance.
 
-    ```lua
-    local grid = Grid.new({
-        width = 10,
-        height = 10,
-        blockProbability = 0.3,
-    })
-    ```
+	```lua
+	local grid = Grid.new({
+		width = 10,
+		height = 10,
+		blockProbability = 0.3,
+	})
+	```
 ]=]
 function Grid.new(props: GridProps): Grid
 	local self = setmetatable({}, Grid)
@@ -67,18 +68,18 @@ function Grid.new(props: GridProps): Grid
 end
 
 --[=[
-    Get the neighbors of a given node. This includes the nodes above, below, left, right, and diagonally adjacent to the node.
+	Get the neighbors of a given node. This includes the nodes above, below, left, right, and diagonally adjacent to the node.
 
-    @method getNeighbors
-    @within Grid
-    @param node Node -- The node to get neighbors for.
-    @return NeighboringNodes -- A table of neighboring nodes.
+	@method getNeighbors
+	@within Grid
+	@param node Node -- The node to get neighbors for.
+	@return Path -- A table of neighboring nodes.
 
-    ```lua
-    local neighbors = grid:getNeighbors(node)
-    ```
+	```lua
+	local neighbors = grid:getNeighbors(node)
+	```
 ]=]
-function Grid.getNeighbors(self: GridInternal, node: Node): NeighboringNodes
+function Grid.getNeighbors(self: GridInternal, node: Node): Path
 	local neighbors = {}
 	local directions = {
 		{ 0, 1 }, -- Up
@@ -94,8 +95,8 @@ function Grid.getNeighbors(self: GridInternal, node: Node): NeighboringNodes
 	for _, dir in directions do
 		local nx, ny = node.x + dir[1], node.y + dir[2]
 		if nx >= 1 and nx <= self.width and ny >= 1 and ny <= self.height then
-			local neighbor = self.grid[ny][nx]
-			if neighbor.walkable then
+			local neighbor = self:getNode(nx, ny)
+			if neighbor and neighbor.walkable then
 				table.insert(neighbors, neighbor)
 			end
 		end
@@ -104,40 +105,47 @@ function Grid.getNeighbors(self: GridInternal, node: Node): NeighboringNodes
 end
 
 --[=[
-    Get the node at the given coordinates in the grid.
+	Get the node at the given coordinates in the grid.
 
-    @method getNode
-    @within Grid
-    @param x number -- The x-coordinate of the node.
-    @param y number -- The y-coordinate of the node.
-    @return Node | nil -- The node at the given coordinates, or nil if it does not exist.
+	@method getNode
+	@within Grid
+	@param x number -- The x-coordinate of the node.
+	@param y number -- The y-coordinate of the node.
+	@return Node | nil -- The node at the given coordinates, or nil if it does not exist.
 
-    ```lua
-    local node = grid:getNode(1, 1)
-    ```
+	```lua
+	local node = grid:getNode(1, 1)
+	```
 ]=]
 function Grid.getNode(self: GridInternal, x: number, y: number): Node | nil
 	return self.grid[y] and self.grid[y][x] or nil
 end
 
 --[=[
-    Display the grid in the console. Walkable nodes are represented by a period (.) and non-walkable nodes are represented by a hash (#).
+	Display the grid in the console. Walkable nodes are represented by a period (.) and non-walkable nodes are represented by a hash (#).
+	If a path is provided, nodes in the path will be represented by an asterisk (*).
+	
+	@method display
+	@within Grid
+	@param path Path? -- An optional path to highlight in the grid. Nodes in the path will be represented by an asterisk (*).
 
-    @method display
-    @within Grid
-
-    ```lua
-    grid:display()
-    ```
+	```lua
+	grid:display()
+	```
 ]=]
-function Grid.display(self: GridInternal)
+function Grid.display(self: GridInternal, path: Path?)
 	for y = 1, self.height do
 		local row = ""
 		for x = 1, self.width do
-			if self.grid[y][x].walkable then
-				row = row .. "."
-			else
-				row = row .. "#"
+			local node = self:getNode(x, y)
+			if node then
+				if path and table.find(path, node) then
+					row = row .. "*" -- Path node
+				elseif node.walkable then
+					row = row .. "." -- Walkable node
+				else
+					row = row .. "#" -- Obstacle
+				end
 			end
 		end
 		print(row)
