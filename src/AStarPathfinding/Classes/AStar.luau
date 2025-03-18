@@ -17,8 +17,8 @@ AStar.__index = AStar
 
 type AStarInternal = {
 	grid: Grid,
-	openList: { Node },
-	closedList: { Node },
+	openList: Path,
+	closedList: Path,
 }
 
 --[=[

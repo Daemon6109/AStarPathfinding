@@ -1,8 +1,8 @@
 export type AStar = {
 	grid: Grid,
-	openList: { Node },
-	closedList: { Node },
-	findPath: (self: AStar, startX: number, startY: number, endX: number, endY: number) -> { Node } | nil,
+	openList: Path,
+	closedList: Path,
+	findPath: (self: AStar, startX: number, startY: number, endX: number, endY: number) -> Path | nil,
 }
 
 export type Grid = {
