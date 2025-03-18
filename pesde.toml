@@ -1,5 +1,5 @@
 name = "daemon/astarpathfinding"
-version = "1.0.5"
+version = "1.0.6"
 authors = ["Daemon6109"]
 description = "A* search algorithm in luau"
 repository = "https://github.com/Daemon6109/AStarPathfinding"

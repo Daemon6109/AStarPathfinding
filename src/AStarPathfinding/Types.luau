@@ -11,7 +11,7 @@ export type Grid = {
 	grid: Node,
 	getNeighbors: (self: Grid, node: Node) -> Path,
 	getNode: (self: Grid, x: number, y: number) -> Node | nil,
-	display: (self: Grid) -> nil,
+	display: (self: Grid, Path?) -> nil,
 }
 
 --[=[
