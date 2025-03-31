@@ -76,14 +76,54 @@ function AStar.findPath(self: AStarInternal, startX: number, startY: number, end
 		return nil -- No valid start or end node
 	end
 
+	-- Reset tracking lists
+	self.openList = {}
+	self.closedList = {}
+
+	-- Reset start node values
+	startNode.gCost = 0
+	startNode.hCost = getHeuristic(startNode, endNode)
+	startNode.parent = nil
+
 	table.insert(self.openList, startNode)
 
+	-- Add safeguards against infinite loops
+	local MAX_ITERATIONS = 2000 -- Limit maximum number of nodes to process
+	local iterations = 0
+
 	while #self.openList > 0 do
-		-- Get the node with the lowest fCost
-		local currentNode = table.remove(self.openList, 1)
-		if not currentNode then -- If there is no current node, (This is primarily for type solver)
-			break
+		iterations += 1
+		if iterations > MAX_ITERATIONS then
+			print(
+				string.format(
+					"A* path finding exceeded maximum iterations (%d) from (%d, %d) to (%d, %d)",
+					MAX_ITERATIONS,
+					startX,
+					startY,
+					endX,
+					endY
+				)
+			)
+			return nil
 		end
+
+		-- Find the node with lowest fCost more efficiently
+		local lowestIndex = 1
+		local lowestF = self.openList[1]:getFCost()
+		local lowestH = self.openList[1].hCost
+
+		for i = 2, #self.openList do
+			local nodeFCost = self.openList[i]:getFCost()
+			if nodeFCost < lowestF or (nodeFCost == lowestF and self.openList[i].hCost < lowestH) then
+				lowestIndex = i
+				lowestF = nodeFCost
+				lowestH = self.openList[i].hCost
+			end
+		end
+
+		local currentNode = table.remove(self.openList, lowestIndex)
+		assert(currentNode, "Current node should not be nil")
+
 		for _, node in self.openList do
 			if
 				node:getFCost() < currentNode:getFCost()
