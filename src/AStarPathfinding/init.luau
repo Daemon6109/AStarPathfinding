@@ -4,7 +4,7 @@
 -- @Daemon6109 (Matthew Radulovich)
 --------------------------------------------------------------------------------
 
-local version = { major = 1, minor = 0, patch = 6 }
+local version = { major = 1, minor = 1, patch = 1 }
 
 local Types = require("./Types")
 
