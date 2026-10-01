@@ -2,19 +2,6 @@
   "name": "astar-pathfinding",
   "emitLegacyScripts": false,
   "tree": {
-    "$className": "DataModel",
-    "ReplicatedStorage": {
-      "Packages": {
-        "$path": "roblox_packages",
-        "Project": {
-          "$path": "src"
-        }
-      }
-    },
-    "ServerScriptService": {
-      "run-tests": {
-        "$path": "scripts/run-tests.server.luau"
-      }
-    }
+    "$path": "src/AStarPathfinding"
   }
 }

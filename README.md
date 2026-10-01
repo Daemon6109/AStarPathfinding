@@ -9,7 +9,7 @@ eight-directional movement.
 ```toml
 # wally.toml
 [dependencies]
-AStarPathfinding = "daemon6109/astar-pathfinding@1.1.1"
+AStarPathfinding = "daemon6109/astar-pathfinding@1.1.2"
 ```
 
 Then run:
