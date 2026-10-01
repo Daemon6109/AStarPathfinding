@@ -1,0 +1,35 @@
+name: Verify Wally package
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    name: Validate publish artifact
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Rokit
+        uses: paradoxum-games/setup-rokit@v3
+        with:
+          cache: true
+
+      - name: Validate Wally manifest
+        run: wally manifest-to-json
+
+      - name: Create Wally package
+        run: wally package --output astar-pathfinding.zip
+
+      - name: Verify only public package files are present
+        run: |
+          unzip -Z1 astar-pathfinding.zip | sort > package-files.txt
+          grep -qx 'README.md' package-files.txt
+          grep -qx 'LICENSE' package-files.txt
+          grep -qx 'src/AStarPathfinding/init.luau' package-files.txt
+          ! grep -Eq '(^scripts/|^src/__tests__/|^pesde.toml$|^moonwave.toml$)' package-files.txt

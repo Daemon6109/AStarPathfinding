@@ -1,5 +1,5 @@
 {
-  "name": "astarpathfinding",
+  "name": "astar-pathfinding",
   "emitLegacyScripts": false,
   "tree": {
     "$path": "dist/src/AStarPathfinding"
