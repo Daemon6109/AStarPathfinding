@@ -7,6 +7,6 @@
 darklua = "seaofvoices/darklua@0.16.0"
 lune = "lune-org/lune@0.8.9"
 rojo = "UpliftGames/rojo@7.4.0-uplift.syncback.rc.20"
-run-in-roblox = "franydev/run-in-roblox@0.3.2"
 selene = "Kampfkarren/selene@0.28.0"
 StyLua = "JohnnyMorganz/StyLua@2.0.2"
+wally = "UpliftGames/wally@0.3.2"
