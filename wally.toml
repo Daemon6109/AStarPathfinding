@@ -1,13 +1,13 @@
 [package]
 name = "daemon6109/astar-pathfinding"
 description = "Deterministic grid-based A* pathfinding for Roblox and Luau."
-version = "1.1.5"
+version = "1.1.6"
 license = "MIT"
 authors = ["Matthew Radulovich (Daemon6109)"]
 realm = "shared"
 registry = "https://github.com/UpliftGames/wally-index"
 repository = "https://github.com/Daemon6109/AStarPathfinding"
-include = ["src/**", "README.md", "LICENSE"]
+include = ["src/init.luau", "src/Types.luau", "src/Classes/**", "src/Utils/**", "README.md", "LICENSE"]
 exclude = [
 	".darklua.json",
 	".gitattributes",
