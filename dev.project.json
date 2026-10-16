@@ -7,7 +7,7 @@
       "Packages": {
         "$path": "roblox_packages",
         "Project": {
-          "$path": "dist"
+          "$path": "dist/src"
         }
       }
     },
