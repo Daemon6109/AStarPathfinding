@@ -2,6 +2,16 @@
   "name": "astar-pathfinding",
   "emitLegacyScripts": false,
   "tree": {
-    "$path": "src/AStarPathfinding"
+    "$className": "ModuleScript",
+    "$path": "init.luau",
+    "Types": {
+      "$path": "Types.luau"
+    },
+    "Classes": {
+      "$path": "Classes"
+    },
+    "Utils": {
+      "$path": "Utils"
+    }
   }
 }

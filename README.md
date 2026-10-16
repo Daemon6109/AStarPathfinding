@@ -9,7 +9,7 @@ eight-directional movement.
 ```toml
 # wally.toml
 [dependencies]
-AStarPathfinding = "daemon6109/astar-pathfinding@1.1.3"
+AStarPathfinding = "daemon6109/astar-pathfinding@1.1.4"
 ```
 
 Then run:
@@ -65,7 +65,7 @@ wally publish
 ```
 
 Versions are immutable in the public Wally registry. Update both
-`wally.toml` and `src/AStarPathfinding/init.luau` to the same next semantic
+`wally.toml` and `init.luau` to the same next semantic
 version before publishing.
 
 ## License

@@ -2,6 +2,15 @@
   "name": "astar-pathfinding",
   "emitLegacyScripts": false,
   "tree": {
-    "$path": "dist/src/AStarPathfinding"
+    "$path": "dist/init.luau",
+    "Types": {
+      "$path": "dist/Types.luau"
+    },
+    "Classes": {
+      "$path": "dist/Classes"
+    },
+    "Utils": {
+      "$path": "dist/Utils"
+    }
   }
 }
