@@ -17,3 +17,8 @@ lune_packages/
 roblox_packages/
 
 sourcemap.json
+# Local roblox-ts consumer test artifacts
+node_modules/
+tests/rbxts/out/
+tests/rbxts/include/
+*.tgz

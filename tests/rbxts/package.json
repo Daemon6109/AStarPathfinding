@@ -1,0 +1,1 @@
+{"name":"astar-consumer-test","private":true,"dependencies":{"@rbxts/astar-pathfinding":"file:../.."},"devDependencies":{"roblox-ts":"3.0.0","@rbxts/types":"^1.0.900","@rbxts/compiler-types":"^3.0.0-types.0"}}
